@@ -32,6 +32,50 @@ body {
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-
+  position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  /* sets the position to absolute relative to the parent container whose
+     position is set to relative. In this case the logo-box is being positioned
+     absolute within the .header element */
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  /* By setting the height, the images width will scale accordingly */
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  /* Since this is a span property, by default it is an inline block element. */
+  /* To take up the entire line on its own, set the display prop to block */
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  /* Since this is a span property, by default it is an inline block element. */
+  /* To take up the entire line on its own, set the display prop to block */
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
 }
