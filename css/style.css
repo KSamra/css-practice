@@ -55,6 +55,9 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  /* center all text elements within the box. This includes the button that says "DISCOVER OUR TOURS" */
+  text-align: center;
 }
 
 .heading-primary {
@@ -63,6 +66,9 @@ body {
 
   /* hack to fix animation shake  */
   backface-visibility: hidden;
+
+  /* margin between the header text and the button */
+  margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -134,4 +140,42 @@ body {
     opacity: 1;
     transform: translate(0);
   }
+}
+/* Make the visited and unvisited states look the same */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+
+/* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
+  padding: 15px 40px;
+  display: inline-block;
+
+  /* round out edges of the button */
+  border-radius: 100px;
+
+  /* make all transitions take 0.2seconds */
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  /* Y-axis moves from top to bottom. This button should move slightly upwards on hover so the param is negative */
+  transform: translateY(-3px);
+
+  /* x-value, y-value, blur, color */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* occurs when the button is clicked */
+.btn:active {
+  /* gives the effect that the button is being clicked in */
+  transform: translateY(-1px);
+
+  /* adjust the shadow slightly so that it makes clicking seem more physical */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
