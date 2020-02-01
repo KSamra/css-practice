@@ -1,4 +1,13 @@
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+
 @import "base/base";
+@import "base/animation";
+@import "base/typography";
+@import "base/utlities";
+
 
 // variables
 $color-primary: #55c57a;
