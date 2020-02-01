@@ -1,29 +1,17 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
 /* Resets that should be done for each design */
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-
   /* by default this propert does not inherit. This will force all elements to inherit the box-sizing property from their
      parent element (in most cases the body element) */
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 /* Changing root font size. Assumes browsers have a default font-size of 16px.
    62.5% of 16px gives a base font-size of 10px */
 html {
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -32,22 +20,15 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 3rem;
-
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(
-    to right bottom, 
-    rgba(126, 213, 111, 0.8), 
-    rgba(40,180,131,0.8)), 
-    url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
 
 .header__logo-box {
   /* sets the position to absolute relative to the parent container whose
@@ -55,34 +36,27 @@ body {
      absolute within the .header element */
   position: absolute;
   top: 4rem;
-  left: 4rem;
-}
+  left: 4rem; }
 
 .header__logo {
   /* By setting the height, the images width will scale accordingly */
-  height: 3.5rem;
-}
+  height: 3.5rem; }
 
 .header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   /* center all text elements within the box. This includes the button that says "DISCOVER OUR TOURS" */
-  text-align: center;
-}
+  text-align: center; }
 
 .heading-primary {
   color: #ffffff;
   text-transform: uppercase;
-
   /* hack to fix animation shake  */
   backface-visibility: hidden;
-
   /* margin between the header text and the button */
-  margin-bottom: 6rem;
-}
+  margin-bottom: 6rem; }
 
 .heading-primary--main {
   /* Since this is a span property, by default it is an inline block element. */
@@ -91,12 +65,9 @@ body {
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
-
   animation-name: moveInLeft;
   animation-duration: 1s;
-  animation-timing-function: ease-out;
-  
-}
+  animation-timing-function: ease-out; }
 
 .heading-primary--sub {
   /* Since this is a span property, by default it is an inline block element. */
@@ -105,10 +76,8 @@ body {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.75rem;
-
   /* Shorthand way of specifying animation-name, animation-duration, and animation-timing-function */
-  animation: moveInRight 1s ease-out;
-}
+  animation: moveInRight 1s ease-out; }
 
 /* Can name this whatever */
 @keyframes moveInLeft {
@@ -116,81 +85,58 @@ body {
   0% {
     opacity: 0;
     /* have the element start 100px to the left from where it will be positioned */
-    transform: translateX(-10rem);
-  }
-
+    transform: translateX(-10rem); }
   80% {
     /* moves a little further right than the final position */
     /* gives a bounce back effect */
-    transform: translateX(1.75rem);
-  }
-
+    transform: translateX(1.75rem); }
   /* When the animation finishes */
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
-
-
+    transform: translate(0); } }
 
 @keyframes moveInRight {
   /* When the animation starts */
   0% {
     opacity: 0;
     /* have the element start 100px to the left from where it will be positioned */
-    transform: translateX(10rem);
-  }
-
+    transform: translateX(10rem); }
   80% {
     /* moves a little further right than the final position */
     /* gives a bounce back effect */
-    transform: translateX(-1rem);
-  }
-
+    transform: translateX(-1rem); }
   /* When the animation finishes */
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
+
 /* Make the visited and unvisited states look the same */
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-
-/* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
+  /* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
   padding: 1.5rem 4rem;
   display: inline-block;
-
   /* round out edges of the button */
   border-radius: 10rem;
-
   /* make all transitions take 0.2seconds */
   transition: all 0.2s;
-
-  font-size: 1.6rem;
-}
+  font-size: 1.6rem; }
 
 .btn:hover {
   /* Y-axis moves from top to bottom. This button should move slightly upwards on hover so the param is negative */
   transform: translateY(-3px);
-
   /* x-value, y-value, blur, color */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 /* occurs when the button is clicked */
 .btn:active {
   /* gives the effect that the button is being clicked in */
   transform: translateY(-1px);
-
   /* adjust the shadow slightly so that it makes clicking seem more physical */
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
   background-color: #fff;
-  color: #777;
-}
+  color: #777; }
