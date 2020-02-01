@@ -14,13 +14,19 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
+/* Changing root font size. Assumes browsers have a default font-size of 16px.
+   62.5% of 16px gives a base font-size of 10px */
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 30px
+  padding: 3rem;
 }
 
 .header {
@@ -41,13 +47,13 @@ body {
      position is set to relative. In this case the logo-box is being positioned
      absolute within the .header element */
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
   /* By setting the height, the images width will scale accordingly */
-  height: 35px;
+  height: 3.5rem;
 }
 
 .text-box {
@@ -68,16 +74,16 @@ body {
   backface-visibility: hidden;
 
   /* margin between the header text and the button */
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   /* Since this is a span property, by default it is an inline block element. */
   /* To take up the entire line on its own, set the display prop to block */
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 1s;
@@ -89,9 +95,9 @@ body {
   /* Since this is a span property, by default it is an inline block element. */
   /* To take up the entire line on its own, set the display prop to block */
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
 
   /* Shorthand way of specifying animation-name, animation-duration, and animation-timing-function */
   animation: moveInRight 1s ease-out;
@@ -103,13 +109,13 @@ body {
   0% {
     opacity: 0;
     /* have the element start 100px to the left from where it will be positioned */
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   80% {
     /* moves a little further right than the final position */
     /* gives a bounce back effect */
-    transform: translateX(10px);
+    transform: translateX(1.75rem);
   }
 
   /* When the animation finishes */
@@ -126,13 +132,13 @@ body {
   0% {
     opacity: 0;
     /* have the element start 100px to the left from where it will be positioned */
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
     /* moves a little further right than the final position */
     /* gives a bounce back effect */
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
 
   /* When the animation finishes */
@@ -148,14 +154,16 @@ body {
   text-decoration: none;
 
 /* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
 
   /* round out edges of the button */
-  border-radius: 100px;
+  border-radius: 10rem;
 
   /* make all transitions take 0.2seconds */
   transition: all 0.2s;
+
+  font-size: 1.6rem;
 }
 
 .btn:hover {
@@ -163,7 +171,7 @@ body {
   transform: translateY(-3px);
 
   /* x-value, y-value, blur, color */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 /* occurs when the button is clicked */
@@ -172,7 +180,7 @@ body {
   transform: translateY(-1px);
 
   /* adjust the shadow slightly so that it makes clicking seem more physical */
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
