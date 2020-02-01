@@ -1,0 +1,21 @@
+/* Resets that should be done for each design */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+
+  /* by default this propert does not inherit. This will force all elements to inherit the box-sizing property from their
+     parent element (in most cases the body element) */
+  box-sizing: inherit;
+}
+
+/* Changing root font size. Assumes browsers have a default font-size of 16px.
+   62.5% of 16px gives a base font-size of 10px */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
