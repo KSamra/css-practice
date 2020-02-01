@@ -2,7 +2,9 @@
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
-
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
 
 /* Resets that should be done for each design */
 *,
@@ -27,7 +29,7 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #777;
+  color: $color-grey-dark;
   padding: 3rem;
 
   box-sizing: border-box;
@@ -44,34 +46,35 @@ body {
   background-position: top;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__logo-box {
+    /* sets the position to absolute relative to the parent container whose
+       position is set to relative. In this case the logo-box is being positioned
+       absolute within the .header element */
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+  &__logo {
+    /* By setting the height, the images width will scale accordingly */
+    height: 3.5rem;
+  }
+  
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    /* center all text elements within the box. This includes the button that says "DISCOVER OUR TOURS" */
+    text-align: center;
+  }
 }
 
-.header__logo-box {
-  /* sets the position to absolute relative to the parent container whose
-     position is set to relative. In this case the logo-box is being positioned
-     absolute within the .header element */
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
 
-.header__logo {
-  /* By setting the height, the images width will scale accordingly */
-  height: 3.5rem;
-}
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  /* center all text elements within the box. This includes the button that says "DISCOVER OUR TOURS" */
-  text-align: center;
-}
 
 .heading-primary {
-  color: #ffffff;
+  color: $color-white;
   text-transform: uppercase;
 
   /* hack to fix animation shake  */
@@ -79,9 +82,8 @@ body {
 
   /* margin between the header text and the button */
   margin-bottom: 6rem;
-}
 
-.heading-primary--main {
+  &--main {
   /* Since this is a span property, by default it is an inline block element. */
   /* To take up the entire line on its own, set the display prop to block */
   display: block;
@@ -93,19 +95,22 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
   
+  }
+
+  &--sub {
+    /* Since this is a span property, by default it is an inline block element. */
+    /* To take up the entire line on its own, set the display prop to block */
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+
+    /* Shorthand way of specifying animation-name, animation-duration, and animation-timing-function */
+    animation: moveInRight 1s ease-out;
+  }
 }
 
-.heading-primary--sub {
-  /* Since this is a span property, by default it is an inline block element. */
-  /* To take up the entire line on its own, set the display prop to block */
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
 
-  /* Shorthand way of specifying animation-name, animation-duration, and animation-timing-function */
-  animation: moveInRight 1s ease-out;
-}
 
 /* Can name this whatever */
 @keyframes moveInLeft {
@@ -151,43 +156,46 @@ body {
     transform: translate(0);
   }
 }
-/* Make the visited and unvisited states look the same */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
 
-/* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
-  padding: 1.5rem 4rem;
-  display: inline-block;
+.btn {
+    /* Make the visited and unvisited states look the same */
+    &:link,
+    &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
 
-  /* round out edges of the button */
-  border-radius: 10rem;
+    /* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
+    padding: 1.5rem 4rem;
+    display: inline-block;
 
-  /* make all transitions take 0.2seconds */
-  transition: all 0.2s;
+    /* round out edges of the button */
+    border-radius: 10rem;
 
-  font-size: 1.6rem;
-}
+    /* make all transitions take 0.2seconds */
+    transition: all 0.2s;
 
-.btn:hover {
-  /* Y-axis moves from top to bottom. This button should move slightly upwards on hover so the param is negative */
-  transform: translateY(-3px);
+    font-size: 1.6rem;
+    }
 
-  /* x-value, y-value, blur, color */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+    &:hover {
+    /* Y-axis moves from top to bottom. This button should move slightly upwards on hover so the param is negative */
+    transform: translateY(-3px);
 
-/* occurs when the button is clicked */
-.btn:active {
-  /* gives the effect that the button is being clicked in */
-  transform: translateY(-1px);
+    /* x-value, y-value, blur, color */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    }
 
-  /* adjust the shadow slightly so that it makes clicking seem more physical */
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
-}
+    /* occurs when the button is clicked */
+    &:active {
+    /* gives the effect that the button is being clicked in */
+    transform: translateY(-1px);
 
-.btn--white {
-  background-color: #fff;
-  color: #777;
+    /* adjust the shadow slightly so that it makes clicking seem more physical */
+    box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
+    }
+
+    &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    }
 }

@@ -29,55 +29,50 @@ body {
   background-position: top;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  /* sets the position to absolute relative to the parent container whose
-     position is set to relative. In this case the logo-box is being positioned
-     absolute within the .header element */
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  /* By setting the height, the images width will scale accordingly */
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* center all text elements within the box. This includes the button that says "DISCOVER OUR TOURS" */
-  text-align: center; }
+  .header__logo-box {
+    /* sets the position to absolute relative to the parent container whose
+       position is set to relative. In this case the logo-box is being positioned
+       absolute within the .header element */
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    /* By setting the height, the images width will scale accordingly */
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* center all text elements within the box. This includes the button that says "DISCOVER OUR TOURS" */
+    text-align: center; }
 
 .heading-primary {
-  color: #ffffff;
+  color: #fff;
   text-transform: uppercase;
   /* hack to fix animation shake  */
   backface-visibility: hidden;
   /* margin between the header text and the button */
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  /* Since this is a span property, by default it is an inline block element. */
-  /* To take up the entire line on its own, set the display prop to block */
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out; }
-
-.heading-primary--sub {
-  /* Since this is a span property, by default it is an inline block element. */
-  /* To take up the entire line on its own, set the display prop to block */
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  /* Shorthand way of specifying animation-name, animation-duration, and animation-timing-function */
-  animation: moveInRight 1s ease-out; }
+  .heading-primary--main {
+    /* Since this is a span property, by default it is an inline block element. */
+    /* To take up the entire line on its own, set the display prop to block */
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    /* Since this is a span property, by default it is an inline block element. */
+    /* To take up the entire line on its own, set the display prop to block */
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* Shorthand way of specifying animation-name, animation-duration, and animation-timing-function */
+    animation: moveInRight 1s ease-out; }
 
 /* Can name this whatever */
 @keyframes moveInLeft {
@@ -110,33 +105,30 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-/* Make the visited and unvisited states look the same */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  /* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  /* round out edges of the button */
-  border-radius: 10rem;
-  /* make all transitions take 0.2seconds */
-  transition: all 0.2s;
-  font-size: 1.6rem; }
-
-.btn:hover {
-  /* Y-axis moves from top to bottom. This button should move slightly upwards on hover so the param is negative */
-  transform: translateY(-3px);
-  /* x-value, y-value, blur, color */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-/* occurs when the button is clicked */
-.btn:active {
-  /* gives the effect that the button is being clicked in */
-  transform: translateY(-1px);
-  /* adjust the shadow slightly so that it makes clicking seem more physical */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
+.btn {
+  /* Make the visited and unvisited states look the same */
+  /* occurs when the button is clicked */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    /* round out edges of the button */
+    border-radius: 10rem;
+    /* make all transitions take 0.2seconds */
+    transition: all 0.2s;
+    font-size: 1.6rem; }
+  .btn:hover {
+    /* Y-axis moves from top to bottom. This button should move slightly upwards on hover so the param is negative */
+    transform: translateY(-3px);
+    /* x-value, y-value, blur, color */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:active {
+    /* gives the effect that the button is being clicked in */
+    transform: translateY(-1px);
+    /* adjust the shadow slightly so that it makes clicking seem more physical */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
