@@ -2,7 +2,6 @@
 .row {
   //1140px is a popular modern choice for max width of a grid.
   max-width: $grid-width; //114rem is equivalent to 1140px in our case. since root pixel size is 10px.
-  background-color: #eee;
 
   // shortcut for center block elements within another block element.
   margin: 0 auto;
@@ -16,7 +15,6 @@
 
   //selects all elements that have a class name beginning with "col-"
   [class^="col-"] {
-    background-color: red;
     float: left;
     
     //apply a right margin to all but the last child in each row.
