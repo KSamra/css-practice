@@ -82,6 +82,11 @@ body {
     /* Shorthand way of specifying animation-name, animation-duration, and animation-timing-function */
     animation: moveInRight 1s ease-out; }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700; }
+
 .btn {
   /* Make the visited and unvisited states look the same */
   /* occurs when the button is clicked */ }
@@ -162,3 +167,8 @@ body {
     transform: translate(-50%, -50%);
     /* center all text elements within the box. This includes the button that says "DISCOVER OUR TOURS" */
     text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
