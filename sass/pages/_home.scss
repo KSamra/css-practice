@@ -15,5 +15,14 @@
     rgba($color-primary-dark,0.8)), 
     url(../img/nat-4.jpg);
   background-size: cover;
+  margin-top: -11.3rem;
   
+  transform: skewY(-7deg);
+
+  // selects all DIRECT children of the section-features class (which is just 'row'. This is what will fix the feature cards being
+  // skewed from the above transform.
+  & > * {
+    transform: skewY(7deg);
+  }
+
 }
