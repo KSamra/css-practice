@@ -1,0 +1,20 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: $color-white;
+  border-radius: 3px;
+  padding: 6rem;
+  font-size: $default-font-size;
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    background-color: orangered;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    //cirle(radius at position-x, position-y), requires that the element is floated and has defined dimensions.
+    // In this case, we do have defined dimensions since width and height are set
+    shape-outside: circle(50% at 50% 50%);
+  }
+}
