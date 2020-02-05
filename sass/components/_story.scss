@@ -22,5 +22,9 @@
     //arguments to circle() -> radius at {position-x} {position-y}
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
+    
+    // move the element away from its surrounding text. Better to use transform,translate when moving
+    // a floated element.
+    transform: translateX(-3rem);
   }
 }
