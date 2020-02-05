@@ -5,13 +5,14 @@
   background-color: $color-white;
   border-radius: 3px;
   padding: 6rem;
+  padding-left: 9rem;
   font-size: $default-font-size;
+  transform: skewX(-12deg);
 
   &__shape {
     width: 15rem;
     height: 15rem;
     float: left;
-    background-color: orangered;
 
     //shape-outside determines how text and surrounding elements flow in respect to this element. We are 
     // making the shape-outside a circle so text will avoid this element as if it were a circle.
@@ -25,6 +26,14 @@
     
     // move the element away from its surrounding text. Better to use transform,translate when moving
     // a floated element.
-    transform: translateX(-3rem);
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__text {
+    transform: skewX(12deg);
   }
 }
