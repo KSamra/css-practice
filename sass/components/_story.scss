@@ -12,9 +12,15 @@
     height: 15rem;
     float: left;
     background-color: orangered;
+
+    //shape-outside determines how text and surrounding elements flow in respect to this element. We are 
+    // making the shape-outside a circle so text will avoid this element as if it were a circle.
     -webkit-shape-outside: circle(50% at 50% 50%);
-    //cirle(radius at position-x, position-y), requires that the element is floated and has defined dimensions.
-    // In this case, we do have defined dimensions since width and height are set
     shape-outside: circle(50% at 50% 50%);
+
+    // here the actual circle is formed. 
+    //arguments to circle() -> radius at {position-x} {position-y}
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
   }
 }

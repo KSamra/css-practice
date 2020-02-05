@@ -326,7 +326,10 @@ body {
     height: 15rem;
     float: left;
     background-color: orangered;
-    shape-outside: circle(50% at 50% 50%); }
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%); }
 
 .row {
   max-width: 114rem;
