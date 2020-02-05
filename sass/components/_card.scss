@@ -3,14 +3,12 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;
+  height: 52rem;
 
 
   &__side {
-    height: 50rem;
+    height: 52rem;
     transition: all .8s ease;
-    color: white;
-    font-size: 2rem;
 
     position: absolute;
     top: 0;
@@ -19,6 +17,9 @@
     backface-visibility: hidden;
 
     border-radius: 3px;
+    //overflow fixes the background image from overflowing its container.
+    //without this our border-radius may not show.
+    overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &--front {
@@ -46,10 +47,14 @@
   &__picture {
     background-size: cover;
     height: 23rem; //found through experimenting with values. This is the height of the image on the card
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
     &--1{
       //image url needs to be relative to style.css in the css folder. Not the current sass folder path!
-      background-image: url(../img/nat-5.jpg);
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), 
+        url(../img/nat-5.jpg);
     }
 
     &--2{
@@ -62,5 +67,46 @@
       background-image: url(../img/nat-5.jpg);
     }
 
+  }
+
+   &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    text-align: right;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+
+    //look into what exactly this property does.
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style-type: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
   }
 }
