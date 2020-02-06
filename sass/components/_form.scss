@@ -10,6 +10,7 @@
     background-color: rgba($color: $color-white, $alpha: .5);
     border: none;
     font-family: inherit;
+    color: inherit;
 
     //transparent bottom border to prevent the input box from shifting by 3px when focused. It does this
     // because on focus there is 3px of green border applied on focus. Having a transparent border will prevent
@@ -17,22 +18,44 @@
     border-bottom: 3px solid transparent;
     width: 90%;
     display: block;
+
+    // override the text styling of the placeholder input field. Without this the most we can modify
+    // normally is the font family, which is already done above in __input.
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+
+    }
+
+    //replace the blue outline provided by the browser when inputting in a text field.
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    // while text input is invalid, keep the bottom border as orange
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
   }
 
-  //replace the blue outline provided by the browser when inputting in a text field.
-  &__input:focus {
-    outline: none;
-    box-shadow: 0 1rem 2rem rgba($color-black, .1);
-    border-bottom: 3px solid $color-primary;
-  }
+  
 
-  // override the text styling of the placeholder input field. Without this the most we can modify
-  // normally is the font family, which is already done above in __input.
-  &::-webkit-input-placeholder {
-    color: $color-grey-dark-2;
-  }
 
   &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
 
+  // using sibling selector which chooses the next immediate sibling
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
   }
 }
