@@ -1,44 +1,51 @@
 
 .btn {
-  /* Make the visited and unvisited states look the same */
+  /* Make the visited, unvisited, and non-link states look the same */
+  &,
   &:link,
   &:visited {
-  text-transform: uppercase;
-  text-decoration: none;
+    text-transform: uppercase;
+    text-decoration: none;
 
-  /* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
-  padding: 1.5rem 4rem;
-  display: inline-block;
+    /* shorthand for applying padding: 15px(top & bottom) 40px(left and right) */
+    padding: 1.5rem 4rem;
+    display: inline-block;
 
-  /* round out edges of the button */
-  border-radius: 10rem;
+    /* round out edges of the button */
+    border-radius: 10rem;
 
-  /* make all transitions take 0.2seconds */
-  transition: all 0.2s;
+    /* make all transitions take 0.2seconds */
+    transition: all 0.2s;
 
-  font-size: $default-font-size;
+    font-size: $default-font-size;
+
+    //remove borders if using this class on an HTML <button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
-  /* Y-axis moves from top to bottom. This button should move slightly upwards on hover so the param is negative */
-  transform: translateY(-3px);
+    /* Y-axis moves from top to bottom. This button should move slightly upwards on hover so the param is negative */
+    transform: translateY(-3px);
 
-  /* x-value, y-value, blur, color */
-  box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    /* x-value, y-value, blur, color */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
   }
 
-  /* occurs when the button is clicked */
-  &:active {
-  /* gives the effect that the button is being clicked in */
-  transform: translateY(-1px);
+  /* occurs when the button is clicked or on focus with keyboard */
+  &:active,
+  &:focus {
+    outline: none;
+    /* gives the effect that the button is being clicked in */
+    transform: translateY(-1px);
 
-  /* adjust the shadow slightly so that it makes clicking seem more physical */
-  box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
+    /* adjust the shadow slightly so that it makes clicking seem more physical */
+    box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
   }
 
   &--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
+    background-color: $color-white;
+    color: $color-grey-dark;
   }
   &--green {
     background-color: $color-primary;
