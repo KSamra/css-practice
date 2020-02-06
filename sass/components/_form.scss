@@ -1,0 +1,38 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color: $color-white, $alpha: .5);
+    border: none;
+    font-family: inherit;
+
+    //transparent bottom border to prevent the input box from shifting by 3px when focused. It does this
+    // because on focus there is 3px of green border applied on focus. Having a transparent border will prevent
+    // the shift
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+  }
+
+  //replace the blue outline provided by the browser when inputting in a text field.
+  &__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba($color-black, .1);
+    border-bottom: 3px solid $color-primary;
+  }
+
+  // override the text styling of the placeholder input field. Without this the most we can modify
+  // normally is the font family, which is already done above in __input.
+  &::-webkit-input-placeholder {
+    color: $color-grey-dark-2;
+  }
+
+  &__label {
+
+  }
+}
