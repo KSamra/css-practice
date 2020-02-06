@@ -315,10 +315,7 @@ body {
 
 .story {
   width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 7rem;
-  margin-top: 0rem;
+  margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 3px;
@@ -326,6 +323,8 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
+  .story:not(:last-child) {
+    margin-bottom: 7rem; }
   .story__shape {
     width: 15rem;
     height: 15rem;

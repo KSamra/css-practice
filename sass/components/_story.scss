@@ -1,9 +1,10 @@
 .story {
   width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 7rem;
-  margin-top: 0rem;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-bottom: 7rem;
+  // margin-top: 0rem;
+  margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
   background-color: $color-white;
   border-radius: 3px;
@@ -11,6 +12,10 @@
   padding-left: 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
+
+  &:not(:last-child) {
+    margin-bottom: 7rem;
+  }
 
   &__shape {
     width: 15rem;
