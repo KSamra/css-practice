@@ -14,6 +14,8 @@
     border-radius: 50%;
     z-index: 12;
     box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    text-align: center;
+    cursor: pointer;
 
   }
 
@@ -47,6 +49,7 @@
     opacity: 0;
 
     transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden;
   }
 
   // centered within the __nav
@@ -115,6 +118,7 @@
   //Hamburger Icon
   &__icon {
 
+    margin-top: 3.5rem;
     position: relative;
 
     &,
@@ -134,9 +138,13 @@
       left: 0;
     }
 
-    &::before {top: -1rem;}
+    &::before {top: -.8rem;}
 
-    &::after {top: 1rem;}
+    &::after {top: .8rem;}
+  }
+
+  &__button:hover &__icon::before {
+
   }
 
 }

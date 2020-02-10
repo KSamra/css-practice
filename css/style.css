@@ -558,7 +558,9 @@ body {
   right: 6rem;
   border-radius: 50%;
   z-index: 12;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer; }
 
 .navigation__background {
   height: 6rem;
@@ -579,7 +581,8 @@ body {
   z-index: 11;
   width: 0;
   opacity: 0;
-  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  overflow: hidden; }
 
 .navigation__list {
   position: absolute;
@@ -622,6 +625,7 @@ body {
   width: 100%; }
 
 .navigation__icon {
+  margin-top: 3.5rem;
   position: relative; }
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     width: 3rem;
@@ -633,9 +637,9 @@ body {
     position: absolute;
     left: 0; }
   .navigation__icon::before {
-    top: -1rem; }
+    top: -.8rem; }
   .navigation__icon::after {
-    top: 1rem; }
+    top: .8rem; }
 
 .section-about {
   background-color: #f7f7f7;
