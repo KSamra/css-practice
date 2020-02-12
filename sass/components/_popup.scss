@@ -49,8 +49,18 @@
     margin-bottom: 4rem;
 
     // seperates text into columns following these rules
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid $color-grey-light-2;
+    
     column-count: 2;
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-light-2;
+
+    //auto hyphens. documents html property must have a "lang" property set
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
   }
 }
