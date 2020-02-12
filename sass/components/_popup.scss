@@ -12,35 +12,7 @@
   visibility: hidden;
   transition: all .3s;
 
-  // the popup has an id=#popup, which makes the popup element the target 
-  // when clicking any link with the same anchor id. These rules should be applied
-  // when on target
-  &:target{
-    opacity: 1;
-    visibility: visible;
-  }
-
-  &__close {
-    &:link,
-    &:visited {
-      color: $color-grey-dark;
-      position: absolute;
-      top: 2.5rem;
-      right: 2.5rem;
-      font-size: 3rem;
-      text-decoration: none;
-      display: inline-block;
-      transition: all .2s;
-
-      //this html text element (&times;) has a predifined line height. This will reset it so that 
-      // it is better positioned to where it is specified.
-      line-height: 1;
-    }
-
-    &:hover {
-      color: $color-primary;
-    }
-  }
+  
 
   &__content {
     @include absCenter;
@@ -55,6 +27,11 @@
 
     // prevents image from slightly overflow it's container
     overflow: hidden;
+
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.25);
+
+    transition: all .4s .2s;
   }
 
   &__left {
@@ -95,5 +72,44 @@
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
     hyphens: auto;
+  }
+
+  // the popup has an id=#popup, which makes the popup element the target 
+  // when clicking any link with the same anchor id. These rules should be applied
+  // when on target
+  &:target{
+    opacity: 1;
+    visibility: visible;
+  }
+
+
+  //how the popup content should open
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+
+  // hides the popup
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+
+      //this html text element (&times;) has a predifined line height. This will reset it so that 
+      // it is better positioned to where it is specified.
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 }
