@@ -19,6 +19,9 @@
 
     // make a table in which there will be two cells. 
     display: table;
+
+    // prevents image from slightly overflow it's container
+    overflow: hidden;
   }
 
   &__left {
@@ -29,6 +32,11 @@
   &__right {
     width: 66.666667%;
     display: table-cell;
+
+    //brings all elements to the middle of the table cell
+    vertical-align: middle;
+
+    padding: 3rem 5rem;
   }
 
   &__img {
@@ -37,6 +45,12 @@
   }
 
   &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
 
+    // seperates text into columns following these rules
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-light-2;
   }
 }
