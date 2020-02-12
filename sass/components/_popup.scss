@@ -8,6 +8,39 @@
   top: 0;
   left: 0;
 
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+
+  // the popup has an id=#popup, which makes the popup element the target 
+  // when clicking any link with the same anchor id. These rules should be applied
+  // when on target
+  &:target{
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+
+      //this html text element (&times;) has a predifined line height. This will reset it so that 
+      // it is better positioned to where it is specified.
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
 
   &__content {
     @include absCenter;
