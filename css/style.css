@@ -458,7 +458,7 @@ body {
 
 .popup {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 13;
   position: fixed;
@@ -466,14 +466,23 @@ body {
   left: 0; }
   .popup__content {
     position: absolute;
-    z-index: 14;
-    height: 50rem;
-    width: 80rem;
-    background-color: #fff;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center; }
+    z-index: 14;
+    width: 75%;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 3px; }
+  .popup__left {
+    width: 33.333333%;
+    float: left; }
+  .popup__right {
+    width: 66.666667%;
+    float: left; }
+  .popup__img {
+    display: block;
+    width: 100%; }
 
 .row {
   max-width: 114rem;
