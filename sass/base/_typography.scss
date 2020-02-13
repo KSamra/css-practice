@@ -4,7 +4,6 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: $color-grey-dark;
-  padding: 3rem;
 
 }
 
@@ -18,6 +17,7 @@ body {
   /* margin between the header text and the button */
   margin-bottom: 6rem;
 
+  
   &--main {
   /* Since this is a span property, by default it is an inline block element. */
   /* To take up the entire line on its own, set the display prop to block */
@@ -29,6 +29,12 @@ body {
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-timing-function: ease-out;
+
+  @include respond(phone){
+    letter-spacing: 1rem;
+    font-family: 5rem;
+  }
+
   
   }
 
@@ -42,6 +48,11 @@ body {
 
     /* Shorthand way of specifying animation-name, animation-duration, and animation-timing-function */
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone){
+      letter-spacing: .5rem;
+      
+    }
   }
 }
 
@@ -59,6 +70,14 @@ body {
 
   letter-spacing: 2px;
   transition: all .2s;
+
+  @include respond(tab-port){
+    font-size: 3rem;
+  }
+
+  @include respond(phone){
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
