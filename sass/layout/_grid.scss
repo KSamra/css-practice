@@ -20,6 +20,14 @@
     //apply a right margin to all but the last child in each row.
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
     }
   }
 
