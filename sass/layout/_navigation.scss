@@ -17,6 +17,11 @@
     text-align: center;
     cursor: pointer;
 
+    @include respond(tab-port) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+
   }
 
   //green circle that hides behind the navigation hamburger circle
@@ -34,6 +39,11 @@
     //radial gradient works from center of element outwards
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
   }
 
   //takes up the entire viewport when active
