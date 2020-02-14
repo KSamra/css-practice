@@ -9,6 +9,14 @@
   // apply the vertical gutter spacing to every child element except the last-child.
   &:not(:last-child){
     margin-bottom: $gutter-vertical;
+
+    // @include respond(tab-port) {
+    //   margin-right: $gutter-vertical-small;
+    // }
+  }
+
+  @include respond(tab-port) {
+    max-width: 50rem;
   }
 
   @include clearfix;
@@ -23,11 +31,12 @@
 
       @include respond(tab-port) {
         margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
       }
     }
 
     @include respond(tab-port) {
-      width: 100%;
+      width: 100% !important;
     }
   }
 
