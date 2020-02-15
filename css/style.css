@@ -522,6 +522,9 @@ body {
     border-bottom: 3px solid #55c57a; }
   .form__input:focus:invalid {
     border-bottom: 3px solid #ff7730; }
+  @media (max-width: 56.25em) {
+    .form__input {
+      width: 100%; } }
 
 .form__label {
   font-size: 1.2rem;
@@ -539,6 +542,10 @@ body {
 .form__radio-group {
   width: 49%;
   display: inline-block; }
+  @media (max-width: 56.25em) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 2rem; } }
 
 .form__radio-input {
   display: none; }
